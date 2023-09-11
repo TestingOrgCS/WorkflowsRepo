@@ -16,6 +16,7 @@ jobs:
         with:
          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
          ref: ${{ github.event.pull_request.head.ref }}
+              ${{ github.event.pull_request.head.ref }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:

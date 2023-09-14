@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs
-      run: echo "${{ github.event.pull_request.head.repo.full_name }}" && echo "${{ github.repository }}
+      run: |
+         echo "${{ github.event.pull_request.head.repo.full_name }}" 
+         echo "${{ github.repository }}"

@@ -11,5 +11,5 @@ jobs:
     steps:
     - name: Run steps for internal PRs
       run: |
-         echo "${{ github.event.pull_request.head.repo.full_name }}" 
-         echo "${{ github.repository }}"
+        echo "${{ github.event.pull_request.head.repo.full_name }}" 
+        echo "${{ github.repository }}"

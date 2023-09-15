@@ -43,7 +43,7 @@ jobs:
         echo "${{ github.repository }} ${{ github.event_name }}  4step"
 
   IF_PUSH:
-    if: github.event_name == 'push'
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs

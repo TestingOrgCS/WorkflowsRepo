@@ -6,10 +6,28 @@ on:
 
 jobs:
   example-job:
-    #if: github.event.pull_request.head.repo.full_name == github.repository"
+    if: github.event.pull_request.head.repo.full_name == ''
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs
       run: |
         echo "${{ github.event.pull_request.head.repo.full_name }}" 
-        echo "${{ github.repository }}"
+        echo "${{ github.repository }}   ONESTEP"
+
+  example-job2:
+    if: github.event_name == workflow_dispatch
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run steps for internal PRs
+      run: |
+        echo "${{ github.event.pull_request.head.repo.full_name }}" 
+        echo "${{ github.repository }}   TWOSTEP"
+
+  example-job3:
+    if: ${{ github.event_name }} == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run steps for internal PRs
+      run: |
+        echo "${{ github.event.pull_request.head.repo.full_name }}" 
+        echo "${{ github.repository }}  threestep"

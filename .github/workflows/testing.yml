@@ -24,10 +24,10 @@ jobs:
         echo "${{ github.repository }}   TWOSTEP"
 
   example-job3:
-    if: ${{ github.event_name }} == 'workflow_dispatch'
+    if: ${{ github.event_name }} == "workflow_dispatch"
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs
       run: |
         echo "${{ github.event.pull_request.head.repo.full_name }}" 
-        echo "${{ github.repository }}  threestep"
+        echo "${{ github.repository }} ${{ github.event_name }}  threestep"

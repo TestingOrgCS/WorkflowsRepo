@@ -24,7 +24,7 @@ jobs:
         echo "${{ github.repository }}   TWOSTEP"
 
   example-job3:
-    if: ${{ github.event_name }} == "workflow_dispatch"
+    if: ${{ github.event_name }} == workflow_dispatch
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs

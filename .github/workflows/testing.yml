@@ -25,7 +25,7 @@ jobs:
         echo "${{ github.repository }}   TWOSTEP"
 
   example-job3:
-    if: 1 == 2
+    if: 1 == 2 || 1==1
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs

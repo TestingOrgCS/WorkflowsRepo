@@ -15,7 +15,7 @@ jobs:
         echo "${{ github.repository }}   ONESTEP"
 
   example-job2:
-    if: github.event_name == workflow_dispatch
+    if: github.event_name == "workflow_dispatch"
     runs-on: ubuntu-latest
     steps:
     - name: Run steps for internal PRs

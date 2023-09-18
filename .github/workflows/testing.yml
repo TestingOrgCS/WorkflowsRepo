@@ -14,6 +14,7 @@ jobs:
       run: |
         echo "${{ github.event.pull_request.head.repo.full_name }}" 
         echo "${{ github.repository }}   ONESTEP"
+        echo "${{ github.event_name }}   EEEER"
 
   example-job2:
    # if: (github.event_name == "workflow_dispatch")

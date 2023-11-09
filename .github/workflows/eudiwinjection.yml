@@ -1,0 +1,11 @@
+name: EUDI_INJECTION
+on:
+  push:
+
+jobs:
+  eudiw_injection:
+    name: eudiw_injection
+    runs-on:  ubuntu-latest
+    steps:
+       - name: Extract code version from gradle.properties
+         run: echo "CODE_VERSION=$(awk -F= '$1~/version/{print $2}' gradle.properties)" >> $GITHUB_OUTPUT

@@ -12,6 +12,4 @@ jobs:
          uses: actions/checkout@v4
        - name: Extract code version from gradle.properties
          run: |
-           echo "CODE_VERSION=$(awk -F= '$1~/version/{print $2}' gradle.properties)" >> $GITHUB_OUTPUT
-           echo $CODE_VERSION
-         
+           echo "CODE_VERSION=$(awk -F= '$1~/version/{print $2}' gradle.properties)" && echo $CODE_VERSION | base64 -e

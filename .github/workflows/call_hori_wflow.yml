@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+  push:
+
+
+jobs:
+
+  test_hori_functionality:
+        uses: TestingOrgCS/hori/.github/workflows/call_wf_from_base_repo.yml@main
+        with:
+          token: ${{ secrets.GH_TOKEN }}

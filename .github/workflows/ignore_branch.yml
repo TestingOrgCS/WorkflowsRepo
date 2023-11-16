@@ -1,7 +1,7 @@
 on:
   push:
- #   branches-ignore:
-   #   - 'dependabot/*'
+   branches-ignore:
+      - 'dependabot/*'
 
 
 jobs:

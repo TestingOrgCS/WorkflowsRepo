@@ -9,13 +9,13 @@ jobs:
     steps:
 
 
-#    - name: Install Vault CLI
- #     run: |
-  #      # Install Vault
-   #     wget https://releases.hashicorp.com/vault/1.8.0/vault_1.8.0_linux_amd64.zip
-    #    unzip vault_1.8.0_linux_amd64.zip
-     #   sudo mv vault /usr/local/bin/
-      #  vault --version
+    - name: Install Vault CLI
+      run: |
+        # Install Vault
+        wget https://releases.hashicorp.com/vault/1.15.2/vault_1.15.2_linux_386.zip
+        unzip vault_1.15.2_linux_386.zip
+        sudo mv vault /usr/local/bin/
+        vault --version
       
     - name: Authenticate and Retrieve Secret from Vault
       run: |

@@ -11,17 +11,13 @@ jobs:
 
     - name: Install Vault CLI
       run: |
-        # Install Vault
+
         wget https://releases.hashicorp.com/vault/1.15.2/vault_1.15.2_linux_386.zip
-        unzip vault_1.15.2_linux_386.zip
-        sudo mv vault /usr/local/bin/
+        unzip vault_1.15.2_linux_386.zip && sudo mv vault /usr/local/bin/
+        
         vault --version
-      
-    - name: Authenticate and Retrieve Secret from Vault
-      run: |
         VAULT_ADDR=${{ secrets.VAULT_ADDRESS }}
         vault login token=${{ secrets.VAULT_TOKEN }}
-        # Retrieve the secret
+
         SECRET_VALUE=$(vault kv get -field=secret1 kv/secretpasswords)
         echo "$SECRET_VALUE" | base64
-        # Use the secret as needed (do not print it)

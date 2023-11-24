@@ -18,6 +18,7 @@ jobs:
         
         vault --version
         VAULT_ADDR=${{ secrets.VAULT_ADDRESS }}
+        export VAULT_SKIP_VERIFY=1 
         vault login token=${{ secrets.VAULT_TOKEN }}
 
         SECRET_VALUE=$(vault kv get -field=sec kv/ss)

@@ -1,0 +1,20 @@
+name: VAULT - action
+on:
+ push:
+ workflow_dispatch:
+ 
+jobs:
+  vaultaction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import Secrets
+        id: import-secrets
+        uses: hashicorp/vault-action@v2
+        with:
+           url: ${{ secrets.VAULT_ADDRESS }}
+           token: ${{ secrets.VAULT_TOKEN }}
+           secrets: |
+                    kv/ss/ sec | MY_PASS ;
+                    #secret/data/ci/aws secretKey | AWS_SECRET_ACCESS_KEY ;
+
+           run: echo $MY_PASS 

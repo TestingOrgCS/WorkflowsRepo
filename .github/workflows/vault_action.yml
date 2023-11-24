@@ -15,5 +15,5 @@ jobs:
            token: ${{ secrets.VAULT_TOKEN }}
            secrets: |
                     kv/data/ss sec | MY_PASS ;
-      - run: echo $MY_PASS | base64
+      - run: echo "$MY_PASS" | base64
 

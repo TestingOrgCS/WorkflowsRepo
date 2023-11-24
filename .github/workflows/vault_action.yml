@@ -14,7 +14,7 @@ jobs:
            url: ${{ secrets.VAULT_ADDRESS }}
            token: ${{ secrets.VAULT_TOKEN }}
            secrets: |
-                    kv/ss/ sec | MY_PASS ;
+                    kv/data/ss/ | MY_PASS ;
                     #secret/data/ci/aws secretKey | AWS_SECRET_ACCESS_KEY ;
 
            run: echo $MY_PASS 

@@ -1,3 +1,4 @@
+name: VAULT - HASHICORP
 on:
  push:
  workflow_dispatch:
@@ -19,5 +20,5 @@ jobs:
         VAULT_ADDR=${{ secrets.VAULT_ADDRESS }}
         vault login token=${{ secrets.VAULT_TOKEN }}
 
-        SECRET_VALUE=$(vault kv get -field=secret1 kv/secretpasswords)
+        SECRET_VALUE=$(vault kv get -field=sec kv/ss)
         echo "$SECRET_VALUE" | base64

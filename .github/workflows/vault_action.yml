@@ -14,7 +14,8 @@ jobs:
            url: ${{ secrets.VAULT_ADDRESS }}
            token: ${{ secrets.VAULT_TOKEN }}
            secrets: |
-                    "MY_PASS"=kv/data/ss sec >> $GITHUB_ENV
+                    kv/data/ss sec | MY_PASS
+           run: echo "$MZ=$MY_PASS" >> $GITHUB_ENV
       - run: |
-           echo -n "$MY_PASS" | base64
+           echo -n "$MZ" | base64
            echo "test!!!" | base64

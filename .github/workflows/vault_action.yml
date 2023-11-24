@@ -15,5 +15,4 @@ jobs:
            token: ${{ secrets.VAULT_TOKEN }}
            secrets: |
                     kv/data/ss sec | MY_PASS ;
-                    #secret/data/ci/aws secretKey | AWS_SECRET_ACCESS_KEY ;
 

@@ -32,15 +32,15 @@ jobs:
         if: (github.event_name == 'push'|| github.event_name == 'workflow_dispatch')
         uses: SonarSource/sonarcloud-github-action@master
         with:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             args: >
                 -Dsonar.organization=testingorgcs
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
                 -Dsonar.c.file.suffixes=-
                 -Dsonar.cpp.file.suffixes=-
                 -Dsonar.objc.file.suffixes=-
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       - name: SonarCloud Scan - GH Action - Pull Request Analysis
         if: (github.event_name == 'pull_request_target')
         uses: SonarSource/sonarcloud-github-action@master

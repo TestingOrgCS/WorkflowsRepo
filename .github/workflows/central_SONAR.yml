@@ -2,7 +2,7 @@ name: SAST - SonarCloud
 on:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
+      GH_TOKEN:
         required: false
       SONAR_TOKEN:
         required: true

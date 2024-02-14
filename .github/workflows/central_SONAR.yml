@@ -41,7 +41,7 @@ jobs:
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+         CI: true
       - name: SonarCloud Scan - GH Action - Pull Request Analysis
         if: (github.event_name == 'pull_request_target')
         uses: SonarSource/sonarcloud-github-action@master
@@ -55,3 +55,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          CI: true

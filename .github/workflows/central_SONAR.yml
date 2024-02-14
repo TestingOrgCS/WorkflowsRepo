@@ -35,6 +35,9 @@ jobs:
             args: >
                 -Dsonar.organization=testingorgcs
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
+                -Dsonar.c.file.suffixes=-
+                -Dsonar.cpp.file.suffixes=-
+                -Dsonar.objc.file.suffixes=-
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

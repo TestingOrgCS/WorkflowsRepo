@@ -36,7 +36,7 @@ jobs:
                 -Dsonar.organization=testingorgcs
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Scan - GH Action - Pull Request Analysis
         if: (github.event_name == 'pull_request_target')
@@ -49,5 +49,5 @@ jobs:
                 -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
                 -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

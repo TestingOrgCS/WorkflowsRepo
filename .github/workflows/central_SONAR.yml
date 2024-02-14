@@ -33,7 +33,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=${{ github.repository_owner }}
+                -Dsonar.organization=testingorgcs
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any

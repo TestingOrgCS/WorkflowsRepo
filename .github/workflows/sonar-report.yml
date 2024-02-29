@@ -17,7 +17,7 @@ jobs:
         - name: Install "sonar-report"  and run it
           run: |
            npm cache clean --force
-           npm install -g sonar-report@3.0.10
+           npm install -g sonar-report
            which sonar-report
            sonar-report -h
 

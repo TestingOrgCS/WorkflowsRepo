@@ -1,0 +1,24 @@
+name: sonar-report
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/*'
+  workflow_dispatch:
+
+jobs:
+    install-sonar-report:
+       runs-on: ubuntu-latest
+       steps:
+        - name: Setup Node 
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+
+        - name: Install "sonar-report"  and run it
+          run: |
+           npm cache clean --force
+           npm install -g sonar-report@3.0.10
+           which sonar-report
+           sonar-report -h
+
+           

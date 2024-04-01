@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-       echo " this is a secret: ${{ secrets.VARIABLE }}
-       echo "this is a variable: ${{ env.VARIABLE }}
+       echo " this is a secret: ${{ secrets.VARIABLE }}"
+       echo "this is a variable: ${{ env.VARIABLE }} OR $VARIABLE"

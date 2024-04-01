@@ -1,0 +1,13 @@
+name: reference a github variable
+on:
+  workflow_dispatch:
+  
+  
+jobs:
+  check_secret:
+    name: Check secret presence
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+       echo " this is a secret: ${{ secrets.VARIABLE }}
+       echo "this is a variable: ${{ env.VARIABLE }}

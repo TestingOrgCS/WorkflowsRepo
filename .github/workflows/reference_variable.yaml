@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-       echo " this is a secret: ${{ secrets.VARIABLE }}" | base64
-       echo "this is a variable: ${{ env.VARIABLE }} OR $VARIABLE" | base64
+       echo " this is a secret1: ${{ secrets.VARIABLE }}" | base64
+       echo "this is a variable2: ${{ env.VARIABLE }} OR $VARIABLE" | base64
+       echo "this is a variable3: ${{ vars.VARIABLE }} OR $VARIABLE" | base64
     env:
        VARIABLE: ${{ secrets.VARIABLE }}
 

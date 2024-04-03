@@ -14,7 +14,7 @@ jobs:
        echo "this is a VAR variable3: ${{ vars.VARIABLE2 }} " | base64
     env:
        ORGSEC1: ${{ secrets.ORGSEC1 }}
-       VARIABLE1: ${{ env.VARIABLE1 }}
+       VARIABLE1: ${{ secrets.VARIABLE1 }}
        VARIABLE2: ${{ vars.VARIABLE2 }}
 
     

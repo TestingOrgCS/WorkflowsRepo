@@ -11,4 +11,4 @@ jobs:
     - run: |
        echo " this is a secret1: ${{ secrets.ORGSEC1 }}" | base64
        echo "this is aN ENV variable2: ${{ env.VARIABLE1 }} " | base64
-       echo "this is a VAR variable3: ${{ vars.VARIABLE2 }} " | base64
+       echo "this is a VAR variable3: ${{ vars.VARIABLE2 }} "

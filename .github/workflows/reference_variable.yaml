@@ -12,6 +12,6 @@ jobs:
        echo " this is a secret: ${{ secrets.VARIABLE }}" | base64
        echo "this is a variable: ${{ env.VARIABLE }} OR $VARIABLE" | base64
     env:
-       VARIABLE: ${{ env.VARIABLE }}
+       VARIABLE: ${{ secrets.VARIABLE }}
 
     

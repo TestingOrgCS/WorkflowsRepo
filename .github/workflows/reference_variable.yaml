@@ -15,6 +15,6 @@ jobs:
     env:
        ORGSEC1: ${{ secrets.ORGSEC1 }}
        VARIABLE1: ${{ secrets.VARIABLE1 }}
-       VARIABLE2: ${{ vars.VARIABLE2 }}
+
 
     

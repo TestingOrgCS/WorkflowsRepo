@@ -1,0 +1,30 @@
+name: Generate and Upload YAML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Create a YAML file with secret placeholders
+      - name: Generate YAML file
+        run: |
+          cat > tt.txt <<EOF
+          the secret is: ${{ secrets.TERR }}
+          the secret is: ${{ secrets.TERR }}
+          the secret is: ${{ secrets.TERR }}
+          EOF
+          
+
+      # Upload the YAML file as an artifact
+      - name: Upload YAML as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-config
+          path: tt.txt
